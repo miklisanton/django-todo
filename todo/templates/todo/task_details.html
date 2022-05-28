@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ task.name }}</title>
+</head>
+<body>
+    {{ task.description }}
+    <br>
+    {{ task.expire_date }}
+    <br>
+    {{ task.get_priority_display }}
+    <br>
+    <a href="{% url 'todo:tasks-list'%}">home</a>
+</body>
+</html>

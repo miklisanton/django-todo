@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'todo/style.css' %}">
+</head>
+<body>
+<h1>Todo list</h1>
+    <div class="wrapper">
+        <div class="flex-container">
+            {% for task in task_list %}
+            <div class="flex-item">
+                <a href="{% url 'todo:task-details' task.id %}">{{ task.name }} {{ task.creation_date }}</a>
+            </div>
+            {% endfor %}
+            <div class="flex-item">
+                <a href="{% url 'todo:add-todo' %}">new todo</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
